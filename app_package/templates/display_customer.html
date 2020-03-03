@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+<form action="" method="POST" novalidate>
+    {{form.hidden_tag()}}
+    <fieldset>
+    <legend>Display Customer</legend>
+    
+    <p>
+    {{form.caccno.label}}{{form.caccno(size=32,autofocus=True)}}
+     {% for error in form.caccno.errors %}
+            <span style="color:red;">{{error}}</span>
+        {% endfor %}
+    </p>
+    
+     <p>{{form.submit()}}</p>
+     
+  </table>
+  
+  <p><a href={{url_for("menu")}}>Back to Menu</a></p>
+    </fieldset>
+    
+    {% endblock %}

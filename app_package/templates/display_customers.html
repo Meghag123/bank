@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+    <fieldset>
+    <legend>Display Customers</legend>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>CUSTOMER NAME</th>
+            <th>ACCOUNT NUMBER</th>
+            <th>AADHADR NUMBER</th>
+            <th>MOBILE</th>
+            <th>TYPE</th>
+            <th>BALANCE</th>
+       </tr>
+       {% for customer in customers %}
+       <tr>
+            <td>{{customer._id}}</td>
+            <td>{{customer.cname}}</td>
+            <td>{{customer.caccno}}</td>
+            <td>{{customer.caadhar}}</td>
+            <td>{{customer.cmobile}}</td>
+            <td>{{customer.ctype}}</td>
+            <td>{{customer.cbalance}}</td>
+        </tr>
+        {% endfor %}
+  </table>
+  
+  <p><a href={{url_for("menu")}}>Back to Menu</a></p>
+    </fieldset>
+    
+    {% endblock %}

@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block content %}
+<form action="" method="POST" novalidate>
+    {{form.hidden_tag()}}
+    <fieldset>
+    <legend>Add Customer</legend>
+    
+    <p>
+    {{form.cname.label}}{{form.cname(size=32,autofocus=True)}}
+     {% for error in form.cname.errors %}
+            <span style="color:red;">{{error}}</span>
+        {% endfor %}
+    </p>
+        
+    <p>
+    {{form.caccno.label}}{{form.caccno(size=32)}}
+     {% for error in form.caccno.errors %}
+            <span style="color:red;">{{error}}</span>
+        {% endfor %}
+    </p>
+        
+    <p>
+    {{form.caadhar.label}}{{form.caadhar(size=32)}}
+     {% for error in form.caadhar.errors %}
+            <span style="color:red;">{{error}}</span>
+        {% endfor %}
+    </p>
+        
+    <p>
+    {{form.cmobile.label}}{{form.cmobile(size=32)}}
+     {% for error in form.cmobile.errors %}
+            <span style="color:red;">{{error}}</span>
+        {% endfor %}
+    </p>
+    
+     <p>
+    {{form.ctype.label}}{{form.ctype(size=32)}}
+     {% for error in form.ctype.errors %}
+            <span style="color:red;">{{error}}</span>
+        {% endfor %}
+    </p>
+    
+     <p>
+    {{form.cbalance.label}}{{form.cbalance(size=32)}}
+     {% for error in form.cbalance.errors %}
+            <span style="color:red;">{{error}}</span>
+        {% endfor %}
+    </p>
+     <p><a href={{url_for("menu")}}>Back to Menu</a></p>
+        
+    <p>{{form.submit()}}</p>
+    
+</fieldset>  
+</form>
+{% endblock %} 
+    

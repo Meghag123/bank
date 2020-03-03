@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+<form action="{{url_for('confirm_delete')}}" method="POST" novalidate>
+    {{form.hidden_tag()}}
+    <fieldset>
+    <legend>Delete Customers</legend>
+    <table>
+        <tr>
+          
+            <th>Customer Name</th>
+            <th>Account Number</th>
+            <th>Balance</th>
+       </tr>
+       {% for customer in customers %}
+       <tr>
+            <td>{{form.caccno}}</td>
+            <td>{{customer.cname}}</td>
+            <td>{{customer.cbalance}}</td>
+        </tr>
+        {% endfor %}
+  </table>
+  
+  <p>{{form.submit()}}</p>
+  
+  <p><a href={{url_for("menu")}}>Back to Menu</a></p>
+    </fieldset>
+    
+    {% endblock %}
